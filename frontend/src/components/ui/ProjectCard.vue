@@ -4,11 +4,12 @@ defineProps<{
   title: string
   description: string
   codeSnippet?: string
+  index: number
 }>()
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" :style="{ top: `calc(100px + ${index * 24}px)` }">
     <div class="info">
       <span class="category">{{ category }}</span>
       <h3>{{ title }}</h3>

@@ -22,14 +22,14 @@ const closeMenu = () => {
 onMounted(() => {
   const callback = (entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+      if (entry.isIntersecting) {
         activeSection.value = entry.target.id
       }
     })
   }
   obs = new IntersectionObserver(callback, {
-    rootMargin: '0px',
-    threshold: 0.6,
+    rootMargin: '-20% 0px -70% 0px',
+    threshold: 0,
   })
 
   document.querySelectorAll('section[id]').forEach((section) => {

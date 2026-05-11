@@ -51,7 +51,12 @@ const Projects: Project[] = [
 <template>
   <section id="projects">
     <SectionBadge tag="projects" title="Verified Codebases." />
-    <ProjectCard v-for="project in Projects" :key="project.title" v-bind="project" />
+    <ProjectCard
+      v-for="(project, index) in Projects"
+      :key="project.title"
+      v-bind="project"
+      :index="index"
+    />
   </section>
 </template>
 <style scoped></style>
