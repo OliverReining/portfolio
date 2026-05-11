@@ -2,7 +2,9 @@
 <template>
   <footer>
     <h2>INITIATE<br />SEQUENCE</h2>
-    <a href="mailto:oliver.reining@gmail.com" class="contact-btn">OLIVER.REINING@GMAIL.COM</a>
+    <div>OLIVER.REINING@GMAIL.COM</div>
+    <div>GITHUB</div>
+    <div>LINKEDIN</div>
   </footer>
 </template>
 <style scoped></style>

@@ -7,6 +7,7 @@ import PageContent from './components/PageContent.vue'
 <template>
   <HeroLayer />
   <PageContent />
+  <FooterComponent />
 </template>
 
 <style scoped></style>
