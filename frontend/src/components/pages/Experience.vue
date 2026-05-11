@@ -2,6 +2,8 @@
 import SectionBadge from '@/components/ui/SectionBadge.vue'
 </script>
 <template>
-  <SectionBadge tag="experience" title="Beruflicher Werdegang" />
+  <section id="experience">
+    <SectionBadge tag="experience" title="Beruflicher Werdegang" />
+  </section>
 </template>
 <style scoped></style>

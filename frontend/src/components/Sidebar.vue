@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <aside>
     <div class="sidebar">
@@ -9,21 +7,72 @@
         <p class="job-title">Software Architect</p>
 
         <nav>
-          <a href="#profile" class="active"><span>profile</span></a>
-          <a href="#competencies"><span>competencies</span></a>
-          <a href="#experience"><span>experience</span></a>
-          <a href="#projects"><span>projects</span></a>
+          <a
+            v-for="link in navLinks"
+            :key="link.id"
+            :href="`#${link.id}`"
+            :class="{ active: activeSection === link.id }"
+          >
+            <span>{{ link.label }}</span>
+          </a>
         </nav>
       </div>
       <div class="social-links">
-        <div>EMAIL</div>
-        <div>GITHUB</div>
-        <div>LINKEDIN</div>
-        <div>SHOW CV</div>
+        <a
+          v-for="link in socialLinks"
+          :key="link.label"
+          :href="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>{{ link.label }}</span>
+        </a>
       </div>
     </div>
   </aside>
 </template>
+
+<script setup lang="ts">
+import { onMounted, onUnmounted, ref } from 'vue'
+
+const navLinks = [
+  { id: 'profile', label: 'profile' },
+  { id: 'competencies', label: 'competencies' },
+  { id: 'experience', label: 'experience' },
+  { id: 'projects', label: 'projects' },
+]
+const socialLinks = [
+  { label: 'EMAIL', url: 'mailto:oliver.reining@gmail.com' },
+  { label: 'GITHUB', url: 'https://github.com/' },
+  { label: 'LINKEDIN', url: 'https://linkedin.com/' },
+  { label: 'SHOW CV', url: '/cv.pdf' },
+]
+
+const activeSection = ref('profile')
+let obs: IntersectionObserver | null = null
+
+onMounted(() => {
+  const callback = (entries: IntersectionObserverEntry[]) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
+        activeSection.value = entry.target.id
+      }
+    })
+  }
+  obs = new IntersectionObserver(callback, {
+    rootMargin: '0px',
+    threshold: 0.6,
+  })
+
+  document.querySelectorAll('section[id]').forEach((section) => {
+    obs?.observe(section)
+  })
+})
+
+onUnmounted(() => {
+  obs?.disconnect()
+})
+</script>
 
 <style scoped>
 aside {
@@ -39,7 +88,7 @@ aside {
   border: 1px solid var(--glass-border);
   border-radius: 32px;
   padding: 48px;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -98,9 +147,18 @@ nav a.active span {
   width: 20px;
 }
 .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.social-links a {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-muted);
-  line-height: 2;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.social-links a:hover {
+  color: var(--accent);
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Competencies from '@/components/Competencies.vue'
+import Competencies from '@/components/pages/Competencies.vue'
 import Profile from '@/components/pages/Profile.vue'
 import Experience from '@/components/pages/Experience.vue'
 import Projects from '@/components/pages/Projects.vue'
