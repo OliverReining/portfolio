@@ -18,6 +18,7 @@ defineProps<{
 
 <style scoped>
 div {
+  z-index: 10;
   position: sticky;
   top: 100px;
   background: #0d0d0f;
@@ -41,5 +42,12 @@ h3 {
 p {
   color: var(--text-secondary);
   margin-bottom: 32px;
+}
+
+@media (max-width: 1024px) {
+  div {
+    grid-template-columns: 1fr;
+    top: 60px;
+  }
 }
 </style>

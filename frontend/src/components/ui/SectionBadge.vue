@@ -28,4 +28,10 @@ h2 {
   margin-bottom: 40px;
   letter-spacing: -0.04em;
 }
+
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}
 </style>
