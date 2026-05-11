@@ -11,45 +11,40 @@ interface Competence {
 
 const competencies: Competence[] = [
   {
-    title: 'Software Architecture',
+    title: 'Automation & AI',
     description:
-      'Designing scalable, maintainable distributed systems using SOLID principles and clean code patterns.',
+      'Orchestrierung komplexer Workflows mit n8n und Integration der OpenAI API zur Effizienzsteigerung.',
     scale: 'large',
-    category: 'Architecture',
+    category: 'Automation',
   },
   {
-    title: 'Vue.js Ecosystem',
-    description: 'Advanced knowledge of Vue 3, Composition API, Pinia, and Vite.',
+    title: 'Fullstack Dev',
+    description: 'Entwicklung moderner Anwendungen mit C#, Vue.js 3 (Composition API) und TypeScript.',
     scale: 'wide',
-    category: 'Frontend',
+    category: 'Development',
   },
   {
-    title: 'TypeScript',
-    description: 'Strong typing for robust and error-free applications.',
-    category: 'Language',
-  },
-  {
-    title: 'Cloud Native',
-    description: 'Experience with Docker, Kubernetes, and modern CI/CD pipelines.',
+    title: 'Infrastructure',
+    description: 'Management von Proxmox-Clustern, Docker-Containern und Linux-Systemen (Debian/Ubuntu).',
     scale: 'tall',
-    category: 'DevOps',
+    category: 'SysAdmin',
   },
   {
-    title: 'Node.js',
-    description: 'Building high-performance backend services and APIs.',
-    category: 'Backend',
+    title: 'Data Engineering',
+    description: 'Legacy-Migrationen von Excel/Sheets nach PostgreSQL und SQL Server via PowerQuery.',
+    category: 'Data',
   },
   {
-    title: 'UI/UX Design',
-    description: 'Creating intuitive and aesthetically pleasing user interfaces.',
+    title: 'Dev Environment',
+    description: 'Hochperformante Workflows mit WSL2, Git und VS Code auf optimierten Linux-Umgebungen.',
+    category: 'Environment',
+  },
+  {
+    title: 'Hardware Engineering',
+    description: 'Konzeption, Bau und Wartung von Custom-PCs und Server-Hardware.',
     scale: 'wide',
-    category: 'Design',
+    category: 'Hardware',
   },
-  // {
-  //   title: 'Testing',
-  //   description: 'Unit and E2E testing with Vitest and Playwright.',
-  //   category: 'Quality',
-  // },
 ]
 </script>
 

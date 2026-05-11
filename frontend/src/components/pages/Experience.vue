@@ -10,22 +10,22 @@ interface TimelineEntry {
 
 const timeline: TimelineEntry[] = [
   {
-    date: '2020 - Present',
-    title: 'Senior Software Engineer at TechCorp',
+    date: '2023 - 2025',
+    title: 'Fachinformatiker für Anwendungsentwicklung (Umschulung)',
     content:
-      'Leading a team of developers to build scalable web applications using Vue.js and Node.js.',
+      'Erfolgreicher Abschluss mit Fokus auf Software-Architektur und Datenbankdesign. Abschlussprojekt: Entwicklung einer automatisierten Lead-Management-Lösung mittels PostgreSQL und n8n-Workflows zur Ablösung von Legacy-Tabellenstrukturen.',
   },
   {
-    date: '2018 - 2020',
-    title: 'Software Engineer at WebSolutions',
+    date: '2018 - 2023',
+    title: 'Stock Management & Automation Lead (ID Logistics / Amazon)',
     content:
-      'Developed and maintained client projects, focusing on frontend development with Vue.js.',
+      'Verantwortlich für die Bestandsintegrität und das Reporting. Entwicklung komplexer Automatisierungstools mit VBA und PowerQuery, die manuelle Prozesse am Standort nahezu vollständig digitalisierten. Beförderung zum Abteilungsleiter und Aufbau eines Optimierungs-Teams.',
   },
   {
-    date: '2016 - 2018',
-    title: 'Junior Developer at CodeFactory',
+    date: '2011 - Heute',
+    title: 'Self-Taught Infrastructure & Self-Hosting',
     content:
-      'Assisted in the development of internal tools and gained experience in full-stack development.',
+      'Langjährige Erfahrung im Aufbau und der Wartung von IT-Infrastruktur. Betrieb eines Proxmox-Heimservers mit Fokus auf Containerisierung (Docker), Automatisierung (n8n), Netzwerksicherheit (VPN/Tailscale) und Linux-Administration.',
   },
 ]
 </script>

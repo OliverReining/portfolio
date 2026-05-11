@@ -7,17 +7,38 @@ defineProps<{
 </script>
 
 <template>
-  <div>
-    <span>{{ date }}</span>
-    <h3>{{ title }}</h3>
-    <p>{{ content }}</p>
+  <div class="timeline-item">
+    <div class="dot"></div>
+    <div class="content">
+      <span>{{ date }}</span>
+      <h3>{{ title }}</h3>
+      <p>{{ content }}</p>
+    </div>
   </div>
 </template>
 
 <style scoped>
-div {
+.timeline-item {
   position: relative;
   padding-left: 48px;
+}
+
+.dot {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 15px;
+  height: 15px;
+  background: var(--bg-base);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 15px var(--accent-soft);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
 }
 span {
   font-family: var(--font-mono);

@@ -74,7 +74,7 @@ const socialLinks = [
       <div>
         <div class="avatar">OR</div>
         <h2 class="name">Oliver Reining</h2>
-        <p class="job-title">Software Architect</p>
+        <p class="job-title">Fullstack Developer | Automation & Infrastructure</p>
 
         <nav>
           <a

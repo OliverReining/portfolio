@@ -6,14 +6,18 @@ import SectionBadge from '@/components/ui/SectionBadge.vue'
     <SectionBadge tag="profile" title="Über mich" />
     <div>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo labore corporis odit, ratione
-        voluptates omnis tempore aliquid sunt rerum cum quia ea iste placeat quas enim totam eos
-        debitis quam.
+        Alles fing mit einem PC aus Schrott-Teilen an, den ich mit elf Jahren zusammengebaut habe.
+        Seitdem ist die IT meine Leidenschaft. In meinem Job in der Logistik habe ich gemerkt, dass
+        ich nicht nur Prozesse begleiten, sondern sie digital lösen will. Dort habe ich angefangen,
+        das komplette Reporting mit VBA und PowerQuery zu automatisieren, was am Ende einen echten
+        Unterschied für den Standort gemacht hat.
       </p>
       <p>
-        <strong>Lorem ipsum</strong> dolor sit amet consectetur adipisicing elit. Fuga ex dicta
-        magnam, hic quam tempore, est distinctio et alias omnis dolorem ab culpa earum ad tempora
-        reprehenderit animi repellendus cumque.
+        Das war der Moment, in dem ich mich für die Umschulung zum Fachinformatiker entschieden
+        habe. Heute kombiniere ich diese praktische Erfahrung in der Prozessoptimierung mit modernen
+        Technologien wie Vue.js und C#. Egal ob es um KI-gestützte Workflows mit n8n oder den Aufbau
+        einer eigenen Server-Infrastruktur auf Proxmox geht, ich entwickle am liebsten Werkzeuge,
+        die echte Probleme lösen.
       </p>
     </div>
   </section>
