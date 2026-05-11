@@ -20,4 +20,7 @@ import Projects from '@/components/pages/Projects.vue'
   flex-direction: column;
   gap: 160px;
 }
+section {
+  margin-bottom: 30px;
+}
 </style>

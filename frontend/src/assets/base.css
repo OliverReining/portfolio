@@ -9,7 +9,7 @@
   --text-muted: #52525b;
   --accent: #00e5ff;
   /* Laser Cyan */
-  --accent-soft: rgba(0, 229, 255, 0.1);
+  --accent-soft: rgba(0, 229, 255, 0.349);
   --font-sans: 'Geist', sans-serif;
   --font-mono: 'Geist Mono', monospace;
   --sidebar-width: 380px;

@@ -71,7 +71,6 @@ p {
   margin: 0;
 }
 
-/* Bento Box Scaling */
 .scale-large {
   grid-column: span 2;
   grid-row: span 2;
@@ -85,7 +84,6 @@ p {
   grid-row: span 2;
 }
 
-/* Subtle Glow Effect on Hover */
 .card-glow {
   position: absolute;
   top: 0;
@@ -106,7 +104,6 @@ p {
   opacity: 1;
 }
 
-/* Adjustments for larger cards */
 .scale-large h3 {
   font-size: 2rem;
 }

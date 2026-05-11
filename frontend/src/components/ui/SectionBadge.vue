@@ -6,14 +6,14 @@ defineProps<{
 </script>
 
 <template>
-  <span>// {{ tag }}</span>
+  <span>>_ {{ tag }}</span>
   <h2>{{ title }}</h2>
 </template>
 
 <style scoped>
 span {
   font-family: var(--font-mono);
-  color: var(--accent);
+  color: var(--accent-soft);
   font-size: 0.75rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
