@@ -5,7 +5,6 @@ import TechBanner from '@/components/TechBanner.vue'
 </script>
 
 <template>
-  <!-- PAGE CONTENT -->
   <div class="page-wrapper">
     <TechBanner />
     <div class="app-container">
@@ -30,5 +29,20 @@ import TechBanner from '@/components/TechBanner.vue'
   padding: 40px 60px;
   display: flex;
   gap: 100px;
+}
+
+@media (max-width: 1280px) {
+  .app-container {
+    gap: 40px;
+    padding: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app-container {
+    flex-direction: column;
+    margin-top: 0;
+    padding: 20px;
+  }
 }
 </style>
