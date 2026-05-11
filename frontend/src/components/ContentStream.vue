@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import Competencies from './Projects.vue'
-import Profile from './Profile.vue'
+import Competencies from '@/components/Competencies.vue'
+import Profile from '@/components/pages/Profile.vue'
+import Experience from '@/components/pages/Experience.vue'
+import Projects from '@/components/pages/Projects.vue'
 </script>
 <template>
   <main>
     <Profile />
     <Competencies />
+    <Experience />
+    <Projects />
   </main>
 </template>
 <style scoped>

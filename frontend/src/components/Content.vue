@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import ContentStream from './ContentStream.vue'
-import Sidebar from './Sidebar.vue'
-import TechBanner from './TechBanner.vue'
+import ContentStream from '@/components/ContentStream.vue'
+import Sidebar from '@/components/Sidebar.vue'
+import TechBanner from '@/components/TechBanner.vue'
 </script>
+
 <template>
   <!-- PAGE CONTENT -->
   <div class="page-wrapper">
@@ -13,6 +14,7 @@ import TechBanner from './TechBanner.vue'
     </div>
   </div>
 </template>
+
 <style scoped>
 .page-wrapper {
   position: relative;
@@ -25,7 +27,7 @@ import TechBanner from './TechBanner.vue'
 .app-container {
   max-width: 1440px;
   margin: 60px auto 0;
-  padding: 0 60px;
+  padding: 40px 60px;
   display: flex;
   gap: 100px;
 }

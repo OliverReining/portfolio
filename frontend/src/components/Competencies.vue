@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import CompetenceCard from './ProjectCard.vue'
-import SectionBadge from './ui/SectionBadge.vue'
+import CompetenceCard from '@/components/ui/CompetenceCard.vue'
+import SectionBadge from '@/components/ui/SectionBadge.vue'
 </script>
 <template>
-  <SectionBadge tag="02 // competencies" title="Projects" />
+  <SectionBadge tag="competencies" title="insert title here" />
   <div class="competence-grid">
     <CompetenceCard
       scale="tall"

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import SectionBadge from './ui/SectionBadge.vue'
+import SectionBadge from '@/components/ui/SectionBadge.vue'
 </script>
 <template>
-  <SectionBadge tag="01 // profile" title="Über mich" />
+  <SectionBadge tag="profile" title="Über mich" />
   <div>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo labore corporis odit, ratione

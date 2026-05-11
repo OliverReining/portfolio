@@ -6,7 +6,7 @@ defineProps<{
 </script>
 
 <template>
-  <span>{{ tag }}</span>
+  <span>// {{ tag }}</span>
   <h2>{{ title }}</h2>
 </template>
 
