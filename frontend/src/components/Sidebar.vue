@@ -8,8 +8,8 @@
         <p>Software Architect</p>
 
         <nav>
-          <a href="#profile"><span></span>01 // PROFILE</a>
-          <a href="#competencies"><span></span>02 // COMPETENCIES</a>
+          <a href="#profile"><span></span>01 // Profile</a>
+          <a href="#competencies"><span></span>02 // Projects</a>
           <a href="#experience"><span></span>03 // EXPERIENCE</a>
           <a href="#projects"><span></span>04 // PROJECTS</a>
         </nav>
