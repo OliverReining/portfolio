@@ -41,7 +41,7 @@ import TechBanner from '@/components/TechBanner.vue'
 @media (max-width: 1024px) {
   .app-container {
     flex-direction: column;
-    margin-top: 0;
+    /* margin-top: 60px; */
     padding: 20px;
   }
 }

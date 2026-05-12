@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isHidden = ref(false)
 
 const handleScroll = () => {
-  if (window.scrollY > 10) {
+  if (window.scrollY > 20) {
     isHidden.value = true
   } else {
     isHidden.value = false
