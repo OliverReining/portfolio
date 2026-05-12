@@ -10,13 +10,13 @@ interface TimelineEntry {
 
 const timeline: TimelineEntry[] = [
   {
-    date: '2023 - 2025',
+    date: '2024 - 2026',
     title: 'Fachinformatiker für Anwendungsentwicklung (Umschulung)',
     content:
       'Erfolgreicher Abschluss mit Fokus auf Software-Architektur und Datenbankdesign. Abschlussprojekt: Entwicklung einer automatisierten Lead-Management-Lösung mittels PostgreSQL und n8n-Workflows zur Ablösung von Legacy-Tabellenstrukturen.',
   },
   {
-    date: '2018 - 2023',
+    date: '2018 - 2024',
     title: 'Stock Management & Automation Lead (ID Logistics / Amazon)',
     content:
       'Verantwortlich für die Bestandsintegrität und das Reporting. Entwicklung komplexer Automatisierungstools mit VBA und PowerQuery, die manuelle Prozesse am Standort nahezu vollständig digitalisierten. Beförderung zum Abteilungsleiter und Aufbau eines Optimierungs-Teams.',
