@@ -26,7 +26,7 @@ import TechBanner from '@/components/TechBanner.vue'
 .app-container {
   max-width: 1440px;
   margin: 60px auto 0;
-  padding: 40px 60px;
+  padding: 50px 60px;
   display: flex;
   gap: 100px;
 }

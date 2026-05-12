@@ -50,8 +50,8 @@ const navLinks = [
 ]
 const socialLinks = [
   { label: 'EMAIL', url: 'mailto:oliver.reining@gmail.com' },
-  { label: 'GITHUB', url: 'https://github.com/' },
-  { label: 'LINKEDIN', url: 'https://linkedin.com/' },
+  { label: 'GITHUB', url: 'https://github.com/oliverreining' },
+  { label: 'LINKEDIN', url: 'https://www.linkedin.com/in/oliver-reining-a379bb2b4/' },
   { label: 'SHOW CV', url: '/cv.pdf' },
 ]
 </script>
