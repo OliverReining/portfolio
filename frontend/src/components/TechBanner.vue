@@ -1,13 +1,40 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const skills = [
+  'ASP.NET Core',
+  'JavaScript',
+  'TypeScript',
+  'Vue.js',
+  'C#',
+  'n8n Automation',
+  'Proxmox (PVE)',
+  'Docker / Compose',
+  'PostgreSQL',
+  'Linux',
+  'WSL2',
+  'TailwindCSS',
+  'RESTAPI',
+  'LLM Integration',
+  'RAG Systems',
+  'GitHub Actions',
+  'Kubernetes',
+  'Microservices',
+  'Hardware Assembly',
+]
+</script>
+
 <template>
   <div class="techstack-container">
-    <div class="techstack-content">
-      <span>ASP.NET Core</span><span>Vue.js</span><span>C#</span><span>Java</span
-      ><span>JavaScript</span><span>TypeScript</span><span>Docker (Compose)</span
-      ><span>PostgreSQL</span><span>MySQL</span><span>TailwindCSS</span>
+    <div class="techstack-track">
+      <div class="techstack-content">
+        <span v-for="skill in skills" :key="skill">{{ skill }}</span>
+      </div>
+      <div class="techstack-content">
+        <span v-for="skill in skills" :key="`dup-${skill}`">{{ skill }}</span>
+      </div>
     </div>
   </div>
 </template>
+
 <style scoped>
 .techstack-container {
   width: 100%;
@@ -19,17 +46,27 @@
   white-space: nowrap;
   font-family: var(--font-mono);
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   position: sticky;
   top: 0;
   z-index: 150;
 }
+
+.techstack-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 40s linear infinite;
+}
+
 .techstack-content {
   display: flex;
-  animation: scroll-left 30s linear infinite;
+  flex-shrink: 0;
 }
+
 span {
-  margin: 0 3rem;
+  display: flex;
+  align-items: center;
+  margin: 0 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -38,9 +75,14 @@ span {
   0% {
     transform: translateX(0);
   }
-
   100% {
+    /* Wir scrollen genau um die Breite EINER Inhalts-Liste */
     transform: translateX(-50%);
   }
+}
+
+/* Pause bei Hover (optional, aber cool für Leser) */
+.techstack-container:hover .techstack-track {
+  animation-play-state: paused;
 }
 </style>

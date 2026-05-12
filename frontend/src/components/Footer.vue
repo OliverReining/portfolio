@@ -1,15 +1,19 @@
 <script setup lang="ts">
-const currentYear = new Date().getFullYear()
 const email = 'oliver.reining@gmail.com'
 </script>
+
 <template>
   <footer>
-    <h2>INITIATE<br />SEQUENCE</h2>
-    <a href="mailto:oliver.reining@gmail.com">{{ email }}</a>
-    <a href="https://github.com/oliverreining" target="_blank">github</a>
-    <a href="https://www.linkedin.com/in/oliver-reining-a379bb2b4/" target="_blank">linkedin</a>
+    <a :href="`mailto:${email}`" class="initiate-link">
+      <h2>INITIATE<br />SEQUENCE</h2>
+    </a>
+    <div class="social-links">
+      <a href="https://github.com/oliverreining" target="_blank">github</a>
+      <a href="https://www.linkedin.com/in/oliver-reining-a379bb2b4/" target="_blank">linkedin</a>
+    </div>
   </footer>
 </template>
+
 <style scoped>
 footer {
   position: fixed;
@@ -27,20 +31,61 @@ footer {
   text-align: center;
 }
 
-h2 {
-  font-size: clamp(5rem, 15vw, 15rem);
-  font-weight: 800;
-  line-height: 0.8;
-  margin-bottom: 5vh;
+.initiate-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
 }
 
-h2:hover {
+.initiate-link:hover {
+  transform: scale(1.02);
+}
+
+h2 {
+  font-size: clamp(3rem, 15vw, 15rem);
+  font-weight: 800;
+  line-height: 0.8;
+  margin: 0;
+  cursor: pointer;
+}
+
+.initiate-link:hover h2 {
   color: var(--text-primary);
   transition: color 0.5s;
 }
-a {
+
+.social-links {
+  display: flex;
+  gap: 32px;
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: clamp(2.5rem, 18vw, 6rem);
+  }
+  
+  .social-links {
+    margin-top: 80px;
+    gap: 24px;
+  }
+  
+  footer {
+    padding: 0 20px;
+  }
+}
+
+.social-links a {
   text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-top: 20px;
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.social-links a:hover {
+  opacity: 1;
 }
 </style>
