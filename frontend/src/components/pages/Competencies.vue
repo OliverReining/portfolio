@@ -19,24 +19,28 @@ const competencies: Competence[] = [
   },
   {
     title: 'Fullstack Dev',
-    description: 'Entwicklung moderner Anwendungen mit C#, Vue.js 3 (Composition API) und TypeScript.',
+    description:
+      'Entwicklung moderner Anwendungen mit C#, Vue.js 3 (Composition API) und TypeScript.',
     scale: 'wide',
     category: 'Development',
   },
   {
     title: 'Infrastructure',
-    description: 'Management von Proxmox-Clustern, Docker-Containern und Linux-Systemen (Debian/Ubuntu).',
+    description:
+      'Management von Proxmox-Clustern, Docker-Containern und Linux-Systemen (Debian/Ubuntu).',
     scale: 'tall',
     category: 'SysAdmin',
   },
   {
     title: 'Data Engineering',
-    description: 'Legacy-Migrationen von Excel/Sheets nach PostgreSQL und SQL Server via PowerQuery.',
+    description:
+      'Legacy-Migrationen von Excel/Sheets nach PostgreSQL und SQL Server via PowerQuery.',
     category: 'Data',
   },
   {
     title: 'Dev Environment',
-    description: 'Hochperformante Workflows mit WSL2, Git und VS Code auf optimierten Linux-Umgebungen.',
+    description:
+      'Hochperformante Workflows mit WSL2, Git und VS Code auf optimierten Linux-Umgebungen.',
     category: 'Environment',
   },
   {

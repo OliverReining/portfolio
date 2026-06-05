@@ -64,12 +64,12 @@ h2 {
   h2 {
     font-size: clamp(2.5rem, 18vw, 6rem);
   }
-  
+
   .social-links {
     margin-top: 80px;
     gap: 24px;
   }
-  
+
   footer {
     padding: 0 20px;
   }
