@@ -1,101 +1,124 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import CompetenceCard from '@/components/ui/CompetenceCard.vue'
 import SectionBadge from '@/components/ui/SectionBadge.vue'
 
 interface Competence {
   title: string
   description: string
-  scale?: 'tall' | 'wide' | 'large'
-  category?: string
+  category: string
 }
 
 const competencies: Competence[] = [
   {
+    title: 'Fullstack Dev',
+    description:
+      'Skalierbare Web-Apps mit C#, Vue.js 3 und TypeScript. Fokus auf Composition API und Backend-Architektur.',
+    category: 'Development',
+  },
+  {
     title: 'Automation & AI',
     description:
-      'Orchestrierung komplexer Workflows mit n8n und Integration der OpenAI API zur Effizienzsteigerung.',
-    scale: 'large',
+      'Workflow-Design mit n8n und Integration von LLMs zur intelligenten Prozessautomatisierung.',
     category: 'Automation',
   },
   {
-    title: 'Fullstack Dev',
+    title: 'Data Engineering',
     description:
-      'Entwicklung moderner Anwendungen mit C#, Vue.js 3 (Composition API) und TypeScript.',
-    scale: 'wide',
+      'ETL-Pipelines mit PowerQuery und Migration von Legacy-Daten in PostgreSQL-Datenbanken.',
     category: 'Development',
   },
   {
     title: 'Infrastructure',
     description:
-      'Management von Proxmox-Clustern, Docker-Containern und Linux-Systemen (Debian/Ubuntu).',
-    scale: 'tall',
-    category: 'SysAdmin',
-  },
-  {
-    title: 'Data Engineering',
-    description:
-      'Legacy-Migrationen von Excel/Sheets nach PostgreSQL und SQL Server via PowerQuery.',
-    category: 'Data',
+      'Betrieb von Proxmox-Clustern, Docker-Containern und Linux-Systemen (Debian/Ubuntu).',
+    category: 'Infrastructure',
   },
   {
     title: 'Dev Environment',
-    description:
-      'Hochperformante Workflows mit WSL2, Git und VS Code auf optimierten Linux-Umgebungen.',
-    category: 'Environment',
+    description: 'Hochperformante Setups mittels WSL2, Git und VS Code auf Linux-Umgebungen.',
+    category: 'Infrastructure',
   },
   {
     title: 'Hardware Engineering',
-    description: 'Konzeption, Bau und Wartung von Custom-PCs und Server-Hardware.',
-    scale: 'wide',
-    category: 'Hardware',
+    description: 'Konzeption und Bau von High-End Workstations und Server-Hardware.',
+    category: 'Infrastructure',
   },
 ]
+
+// Automatically group by category for a scalable layout
+const groupedCompetencies = computed(() => {
+  const groups: Record<string, Competence[]> = {}
+  competencies.forEach((item) => {
+    if (!groups[item.category]) {
+      groups[item.category] = []
+    }
+    groups[item.category]!.push(item)
+  })
+  return groups
+})
 </script>
 
 <template>
   <section id="competencies">
-    <SectionBadge tag="competencies" title="Core Competencies" />
-    <div class="competence-grid">
-      <CompetenceCard
-        v-for="skill in competencies"
-        :key="skill.title"
-        :title="skill.title"
-        :description="skill.description"
-        :scale="skill.scale"
-        :category="skill.category"
-      />
+    <SectionBadge tag="competencies" title="Tech Stack & Expertise" />
+
+    <div class="category-flow">
+      <div v-for="(items, category) in groupedCompetencies" :key="category" class="category-block">
+        <h3 class="category-title">{{ category }}</h3>
+        <div class="cards-grid">
+          <CompetenceCard
+            v-for="skill in items"
+            :key="skill.title"
+            :title="skill.title"
+            :description="skill.description"
+          />
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-.competence-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  grid-auto-rows: 180px;
-  grid-auto-flow: dense;
+.category-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-@media (max-width: 1024px) {
-  .competence-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.category-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.category-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.category-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--glass-border), transparent);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
 }
 
 @media (max-width: 640px) {
-  .competence-grid {
+  .cards-grid {
     grid-template-columns: 1fr;
-    grid-auto-rows: auto;
-    gap: 16px;
-  }
-
-  /* Reset Bento Spans on Mobile for readability */
-  .competence-grid :deep(.scale-large),
-  .competence-grid :deep(.scale-wide),
-  .competence-grid :deep(.scale-tall) {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
   }
 }
 </style>

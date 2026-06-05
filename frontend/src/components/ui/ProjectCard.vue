@@ -16,13 +16,18 @@ defineProps<{
       <p>{{ description }}</p>
     </div>
     <div class="preview">
-      <div class="window-controls">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="window-header">
+        <div class="window-controls">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="window-title">main.ts</div>
       </div>
-      <code v-if="codeSnippet">{{ codeSnippet }}</code>
-      <div v-else class="placeholder">Preview coming soon...</div>
+      <div class="code-editor">
+        <code v-if="codeSnippet" class="code-content">{{ codeSnippet }}</code>
+        <div v-else class="placeholder">Terminal Preview coming soon...</div>
+      </div>
     </div>
   </div>
 </template>
@@ -56,6 +61,7 @@ h3 {
   font-size: 2.5rem;
   margin: 20px 0;
   letter-spacing: -0.04em;
+  color: var(--text-primary);
 }
 
 p {
@@ -68,8 +74,6 @@ p {
   background: #050505;
   border: 1px solid var(--glass-border);
   border-radius: 16px;
-  padding: 24px;
-  font-family: var(--font-mono);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -77,30 +81,59 @@ p {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+.window-header {
+  height: 40px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--glass-border);
+}
+
 .window-controls {
   display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 6px;
 }
 
 .window-controls span {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #333;
 }
 
-code {
-  color: var(--text-secondary);
+.window-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: lowercase;
+}
+
+.code-editor {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.code-content {
+  color: #888;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
+  line-height: 1.6;
   white-space: pre-wrap;
   word-break: break-all;
+  border-left: 2px solid var(--accent);
+  padding-left: 20px;
 }
 
 .placeholder {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-top: 20px;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
 }
 
 @media (max-width: 1280px) {
@@ -114,6 +147,12 @@ code {
 @media (max-width: 1024px) {
   .card {
     top: 40px;
+    margin-bottom: 80px;
+    padding: 32px;
+  }
+
+  h3 {
+    font-size: 2rem;
   }
 }
 </style>
