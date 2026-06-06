@@ -11,4 +11,4 @@ fi
 echo "New changes detected! Rebuilding..."
 docker compose up -d --build
 
-echo "Update successfully deployed!"cd
+echo "Update successfully deployed!"
