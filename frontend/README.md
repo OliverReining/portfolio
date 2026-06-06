@@ -1,48 +1,61 @@
-# frontend
+# Frontend Directory (`frontend/`)
 
-This template should help get you started developing with Vue 3 in Vite.
+This directory contains the main web application: a modern, interactive single-page portfolio built with **Vue 3**, **Vite**, **TypeScript**, and **Vanilla CSS**.
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📂 Subdirectory structure
 
-## Recommended Browser Setup
+- **[src/](file:///home/oliver/projects/portfolio/frontend/src)**: The Vue application code, assets, styles, and components. See [frontend/src/README.md](file:///home/oliver/projects/portfolio/frontend/src/README.md) for architecture.
+- **[public/](file:///home/oliver/projects/portfolio/frontend/public)**: Static assets that are copied directly to the output root (e.g., CV file, favicon).
+- **[package.json](file:///home/oliver/projects/portfolio/frontend/package.json)**: Node dependencies, package engine requirements, and CLI scripts.
+- **[.prettierrc.json](file:///home/oliver/projects/portfolio/frontend/.prettierrc.json)**: Formatting settings.
+- **tsconfig files**: Typescript compiler definitions for the build pipeline and IDE services.
+- **vite.config.ts** & **vitest.config.ts**: Tooling configuration for the Vite bundler and Vitest unit testing library.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+---
 
-## Type Support for `.vue` Imports in TS
+## 🚀 Development Lifecycle
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+### 📦 Installation
+Use **pnpm** to manage dependencies:
+```bash
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+### ⚡ Local Development Server
+Launch the development server with Hot Module Replacement (HMR):
+```bash
 pnpm dev
 ```
+Open your browser to the URL printed in the terminal (usually `http://localhost:5173`).
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+### 🛠️ Production Build & Type-checking
+Runs `vue-tsc` to perform complete type-checking on `.vue` and `.ts` files, then builds and minifies static files into `/dist`:
+```bash
 pnpm build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
+### 🧪 Unit Testing
+Runs unit tests via Vitest:
+```bash
 pnpm test:unit
 ```
+
+### 🧹 Formatting
+Format files using Prettier:
+```bash
+pnpm format
+```
+
+---
+
+## 🤖 AI Agent Guidelines for Development
+
+1. **Composition API**: Always use `<script setup lang="ts">` syntax in `.vue` files.
+2. **Path Alias**: The project has path aliasing configured. Use `@/` to import from `frontend/src/`:
+   ```ts
+   import TimelineItem from '@/components/ui/TimelineItem.vue'
+   ```
+3. **No Styling Frameworks**: Styling is done entirely with scoped **Vanilla CSS**. Avoid adding libraries like Tailwind unless explicitly requested. Design tokens should be retrieved from custom properties in [base.css](file:///home/oliver/projects/portfolio/frontend/src/assets/base.css).
+4. **Volar & IDE settings**: The VS Code workspace configures Volar as the language service. Do not install Vetur.
