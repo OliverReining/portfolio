@@ -1,0 +1,34 @@
+services:
+  ts-portfolio:
+    image: tailscale/tailscale:latest
+    container_name: ts-portfolio
+    hostname: portfolio
+    environment:
+      - TS_AUTHKEY=tskey-auth-kjMXhUaNX521CNTRL-MiiNEkzuCWBRwNFirAWPWBfCfixsWDjJ
+      - TS_STATE_DIR=/var/lib/tailscale
+      - TS_SERVE_CONFIG=/config/portfolio.json
+      - TS_USERSPACE=false
+    volumes:
+      - ts-state:/var/lib/tailscale
+      - ./config:/config
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    restart: unless-stopped
+
+  portfolio:
+    build: .
+    container_name: portfolio
+    network_mode: "service:ts-portfolio"
+    depends_on:
+      - ts-portfolio
+    restart: unless-stopped
+    volumes:
+      - portfolio-data:/app/data/
+volumes:
+  portfolio-data:
+    driver: local
+  ts-state:
+    driver: local
